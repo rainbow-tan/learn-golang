@@ -58,7 +58,7 @@ func serveHTTP() {
 
 func httpHandler(w http.ResponseWriter, r *http.Request) {
 	log.Printf("request from %s: %s %q", r.RemoteAddr, r.Method, r.URL)
-	_, err := fmt.Fprintf(w, "go-daemon: %q", html.EscapeString(r.URL.Path))
+	_, err := fmt.Fprintf(w, "hello 你好啊!: %q", html.EscapeString(r.URL.Path))
 	if err != nil {
 		log.Printf("返回信息失败, err:%s",err)
 		return
