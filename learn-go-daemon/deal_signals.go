@@ -36,7 +36,7 @@ func main() {
 		log.Printf("活动的标志位, 数量:%d", len(daemon.ActiveFlags()))
 		d, err := context.Search() //查询守护进程,成功返回*os.Process失败返回err 没有PID文件返回nil
 		if err != nil {
-			log.Fatalf("发送信号给子进程失败: %s", err.Error())
+			log.Fatalf("查询子进程失败: %s", err.Error())
 		}
 		log.Printf("存在的子进程是:%+v", d)
 		err = daemon.SendCommands(d)
