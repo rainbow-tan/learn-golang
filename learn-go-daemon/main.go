@@ -29,8 +29,8 @@ func main() {
 		log.Fatal("创建守护进程失败, err:", err.Error())
 	}
 	if d != nil {
-		log.Printf("这是父进程的标志")
-		return
+		log.Printf("这是在父进程的标志")
+		//return
 	}
 
 	defer func(context *daemon.Context) {
