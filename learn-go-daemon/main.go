@@ -26,7 +26,7 @@ func main() {
 
 	d, err := context.Reborn() //拷贝上下文创建子进程 在父进程返回*os.Process 在子进程程返回的是nil 其他情况返回错误
 	if err != nil {
-		log.Fatal("创建守护进程失败, err:", err.Error())
+		log.Fatal("守护进程应该已经存在了, 创建守护进程失败, err:", err.Error())
 	}
 	if d != nil {
 		log.Printf("这是在父进程的标志")
