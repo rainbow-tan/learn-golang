@@ -30,7 +30,7 @@ func main() {
 	}
 	if d != nil {
 		log.Printf("这是在父进程的标志")
-		//return
+		return
 	}
 
 	defer func(context *daemon.Context) {
