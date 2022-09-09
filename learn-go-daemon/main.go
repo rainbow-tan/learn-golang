@@ -24,7 +24,7 @@ func main() {
 		Args:        []string{"go-daemon守护进程服务"}, //传递给子进程的参数 是nil就用os.Args
 	}
 
-	d, err := context.Reborn() //在父进程返回*os.Process 在子进程程返回的是nil 其他情况返回错误
+	d, err := context.Reborn() //拷贝上下文创建子进程 在父进程返回*os.Process 在子进程程返回的是nil 其他情况返回错误
 	if err != nil {
 		log.Fatal("创建守护进程失败, err:", err.Error())
 	}
@@ -43,7 +43,7 @@ func main() {
 
 	log.Print("守护进程启动!!!!!")
 	serveHTTP()
-	log.Print("服务退出了~~~")
+	log.Print("子进程服务退出了~~~")
 }
 
 func serveHTTP() {
