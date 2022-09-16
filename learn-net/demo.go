@@ -30,5 +30,10 @@ func main() {
 	}
 	for _, inter := range interfaces {
 		fmt.Printf("网卡信息是:%+v\n", inter)
+		if inter.Flags&net.FlagLoopback != 0 {
+			fmt.Printf("This is loopback lo:%+v\n", inter)
+		}
 	}
+
+
 }
